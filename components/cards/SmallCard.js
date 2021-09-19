@@ -23,7 +23,7 @@ import { currencyFormatter } from '../../redux/actions/stripe';
 import { diffDays } from '../../redux/actions/hotel';
 import SingleCar from './SingleCar/App';
 
-const BASE_URL = process.env.REACT_APP_API || 'http://localhost:8000/api';
+const BASE_URL = process.env.REACT_APP_API || '/api';
 
 function SmallCard({
   h,

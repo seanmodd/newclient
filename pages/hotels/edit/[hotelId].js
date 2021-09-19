@@ -8,7 +8,7 @@ import HotelEditForm from '../../../components/forms/HotelEditForm';
 // ! useRouter from Nextjs
 // const { Option } = Select;
 
-const BASE_URL = process.env.REACT_APP_API || 'http://localhost:8000/api';
+const BASE_URL = process.env.REACT_APP_API || '/api';
 
 const EditHotel = () => {
   const router = useRouter();

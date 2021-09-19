@@ -5,7 +5,7 @@ import { diffDays } from '../../redux/actions/hotel';
 
 import OrderModal from '../modals/OrderModal';
 
-const BASE_URL = process.env.REACT_APP_API || 'http://localhost:8000/api';
+const BASE_URL = process.env.REACT_APP_API || '/api';
 
 const BookingCard = ({ hotel, session, orderedBy }) => {
   const [showModal, setShowModal] = useState(false);

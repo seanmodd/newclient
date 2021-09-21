@@ -65,7 +65,7 @@ const theme = extendTheme({
         mx: '1',
         my: '2',
         textAlign: 'center',
-        fontColor: 'purple',
+        color: 'purple',
         fontSize: '0.9em',
         bg: props.colorMode === 'dark' ? 'gray.300' : 'gray.50',
         borderRadius: '10px',

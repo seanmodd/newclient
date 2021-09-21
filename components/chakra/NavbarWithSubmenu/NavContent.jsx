@@ -66,7 +66,7 @@ const MobileNavContext = (props) => {
           <Link href="/auth/login">
             <Button
               _hover={{ color: 'blue.200' }}
-              fontColor={mode('gray.50', 'gray.50')}
+              color={mode('gray.50', 'gray.50')}
               bg={mode('blue.400', 'blue.400')}
               as="a"
               colorScheme="blue"

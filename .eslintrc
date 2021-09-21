@@ -1,9 +1,9 @@
 
-// // {
-// //   "extends": [
-// //     "wesbos"
-// //   ]
-// // }
+{
+  "extends": [
+    "wesbos"
+  ]
+}
 
 // //! THE ORIGINAL
 // //npm install --save-dev eslint-config-prettier

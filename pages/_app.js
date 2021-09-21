@@ -8,9 +8,7 @@ import {
   HStack,
 } from '@chakra-ui/react';
 import '../styles/globals.css';
-
-
-
+import { KBarProvider, KBarContent, KBarSearch, KBarResults } from 'kbar';
 
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
@@ -25,27 +23,50 @@ function MyApp({ Component, pageProps }) {
   const store = createStore(rootReducer, composeWithDevTools());
   return (
     <ChakraProvider resetCSS theme={theme}>
-      <Provider store={store}>
-        <ColorModeProvider
-          options={{
-            useSystemColorMode: true,
-          }}
-        >
-          <MyBox>
-            {/* <TopNav /> */}
+      <KBarProvider actions={actions}>
+        <Provider store={store}>
+          <ColorModeProvider
+            options={{
+              useSystemColorMode: true,
+            }}
+          >
+            <MyBox>
+              {/* <TopNav /> */}
 
-            <NavbarWithSubmenu />
-            {/* <DarkModeSwitch /> */}
-            <ContentBox>
-              <Component {...pageProps} />
-            </ContentBox>
-            <SimpleFooter />
-          </MyBox>
-        </ColorModeProvider>
-      </Provider>
+              <NavbarWithSubmenu />
+              {/* <DarkModeSwitch /> */}
+              <ContentBox>
+                <KBarContent>
+                  <KBarSearch />
+                  <KBarResults />
+                </KBarContent>
+                <Component {...pageProps} />
+              </ContentBox>
+              <SimpleFooter />
+            </MyBox>
+          </ColorModeProvider>
+        </Provider>
+      </KBarProvider>
     </ChakraProvider>
   );
 }
+
+const actions = [
+  {
+    id: 'blog',
+    name: 'Blog',
+    shortcut: ['b'],
+    keywords: 'writing words',
+    perform: () => (window.location.pathname = 'blog'),
+  },
+  {
+    id: 'contact',
+    name: 'Contact',
+    shortcut: ['c'],
+    keywords: 'email',
+    perform: () => (window.location.pathname = 'contact'),
+  },
+];
 
 export default MyApp;
 const MyBox = ({ children }) => {

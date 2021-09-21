@@ -1,11 +1,12 @@
 import * as React from 'react';
+
 import { IoCalendar, IoGrid, IoHelpBuoy } from 'react-icons/io5';
 import { MdWeb } from 'react-icons/md';
 
 export const links = [
   {
     label: 'Rent Now',
-    href: '/',
+    href: '/cars',
   },
   {
     label: 'Start Today',
